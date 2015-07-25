@@ -38,14 +38,16 @@ def findKsmallest(A, B, K):
             aj += 1
             bi += 1
         K -= 1
+    if ai > aj:
+        A[aj:ai+1] = A[aj:ai+1][::-1]
 
 def main():
-    n = 10
+    n = 4
     A = sorted(random.sample(range(1,101), n))
-    B = sorted(random.sample(range(1,101), n*2))
+    B = sorted(random.sample(range(1,101), 2))
     print(A)
     print(B)
-    k = n
+    k = n-3
     findKsmallest(A,B,k)
     print(A)
     print(A[:k])
